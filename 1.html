@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <p>
+      Write a Javascript program to check two numbers and return true if one of
+      the number is 100 or if sum of the two numbers is 100
+    </p>
+
+    <pre>
+        <code>
+            function checkTwoNumbers(a, b){
+                if((a == 100 || b == 100) || (a + b == 100) ){
+                    return true;
+                }
+            }
+            console.log(checkTwoNumbers(100, 2))   // true
+            console.log(checkTwoNumbers(25, 75))  // true    
+        </code>
+        
+    </pre>
+  </body>
+  <script>
+    function checkTwoNumbers(a, b) {
+      if (a == 100 || b == 100 || a + b == 100) {
+        return true;
+      }
+    }
+    console.log(checkTwoNumbers(100, 2));
+    console.log(checkTwoNumbers(25, 75));
+  </script>
+</html>

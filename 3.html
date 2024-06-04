@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <p>
+      Write a Javascript program to replace every character in a given string
+      with the character following it in the alphabet.
+    </p>
+
+    <pre>
+        <code>
+            function moveCharacters(str) {
+                let strArr = str.toLowerCase().split(""); // gives an array of all characters
+                let newStrArr = strArr.map((ch) => {
+                  let charCode = ch.charCodeAt(ch[0]); // character code in numbers of each ch
+                  let nextCharCode;
+                  if (charCode === 122) {                 // if character is z, make it a
+                    
+                    nextCharCode = 97;
+                  } else {
+                    nextCharCode = charCode + 1; // add 1 to get next character's code
+                  }
+          
+                  let nextCh = String.fromCharCode(nextCharCode); // get character from the character code
+                  return nextCh;
+                });
+          
+                return newStrArr.join("");
+              }
+              console.log(moveCharacters("abcdez")); // bcdefa  
+        </code>
+        
+    </pre>
+  </body>
+  <script>
+    function moveCharacters(str) {
+      let strArr = str.toLowerCase().split(""); // gives an array of all characters
+      let newStrArr = strArr.map((ch) => {
+        let charCode = ch.charCodeAt(ch[0]); // character code in numbers of each ch
+        let nextCharCode;
+        if (charCode === 122) {                 // if character is z, make it a
+          
+          nextCharCode = 97;
+        } else {
+          nextCharCode = charCode + 1; // add 1 to get next character's code
+        }
+
+        let nextCh = String.fromCharCode(nextCharCode); // get character from the character code
+        return nextCh;
+      });
+
+      return newStrArr.join("");
+    }
+    console.log(moveCharacters("ABCDEz")); // bcde
+  </script>
+</html>
